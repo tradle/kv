@@ -27,6 +27,12 @@ exports.wrap = function wrap ({ store }) {
     })
   })
 
+  if (!wrapped.put) {
+    wrapped.put = wrapped.set
+  } else if (!wrapped.set) {
+    wrapped.set = wrapped.put
+  }
+
   return wrapped
 
   function validate (method, args) {
