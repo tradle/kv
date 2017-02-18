@@ -79,9 +79,13 @@ function cleanup () {
 }
 
 function newStore (create) {
-  return wrap({
-    store: create({
-      path: testDBPath
-    })
+  return create({
+    path: testDBPath
   })
+
+  // return wrap({
+  //   store: create({
+  //     path: testDBPath
+  //   })
+  // })
 }
